@@ -1,0 +1,42 @@
+.login, .register {
+    width: calc(400px + 5rem);
+}
+
+.register {
+
+    input:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &-information {
+        border: 1px solid $primaryColor;
+        border-radius: $borderRadius;
+        background-color: $transparentgreen;
+        padding: 0.75em 0.5em;
+        margin: 1em 0;
+        line-height: 1.3em;
+        font-size: 0.95em;
+        ul {
+            padding-left: 1.5em;
+        }
+    }
+}
+
+
+@media (max-width: 540px){
+    .login input {
+        margin-bottom: 1em;
+    }
+    
+    .login, .register {
+        padding: 1.5em 1.5em;
+        width: 95%;
+        input {
+            height: 3.3em;
+        }
+
+        [type="submit"] {
+            height: 3em;
+        }
+    }
+}

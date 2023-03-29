@@ -1,0 +1,215 @@
+.user {
+    max-width: 1400px;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+
+    &-wrap>* {
+        // width: 333px;
+        width: 40%;
+        max-width: 333px;
+        // Zakomentowany kod
+        // daje tę samą szerokość
+        // ale że element jest mniejszy
+        // to się flex wrapuje
+    }
+
+    &-title,
+    .admin-title {
+        align-self: flex-start;
+    }
+
+    .admin-title {
+        margin-top: 2em;
+    }
+
+    &-password_form,
+    &-image_form,
+    &-login_form,
+    &-delete_form {
+        border: none;
+        padding: 0;
+        align-items: center;
+
+        &--submit {
+            width: auto;
+            align-self: flex-start;
+        }
+    }
+}
+
+.userPanel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.user-data {
+    &_name {
+        margin-top: 1em;
+        text-align: center;
+    }
+}
+
+.user-login {
+    &_title {
+        color: black;
+    }
+}
+
+
+.user-image {
+    &_form {
+
+        display: flex;
+
+        &--input {
+            padding: 0;
+            border: none !important;
+
+        }
+    }
+}
+
+.admin {
+    &-excercises_form,
+    &-lists_form,
+    &-comments_form,
+    &-delete_form {
+        border: none;
+        padding: 0;
+        align-items: left;
+
+        &--submit {
+            width: auto;
+            align-self: flex-start;
+        }
+        select {
+            margin-bottom: 1em;
+            width: 100%;
+            align-self: flex-start;
+            padding: 0.5em;
+            border: 1px solid $green;
+            border-radius: $borderRadius;
+            font-size: 1.05em;
+        }
+        textarea {
+            width: 100%;
+            padding: 1.25em 0.5em;
+            margin-bottom: 1em;
+            height: 3.7em;
+            position: relative;
+            border: 1px solid $primaryColor;
+            border-radius: $borderRadius;
+            font-size: 1.1em;
+            // resize: none;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+    }
+}
+
+.adminPanel {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15%;
+    padding-right: 8%;
+}
+
+.adminPanel > * {
+    width: 40%;
+    max-width: 333px;
+    margin-bottom: 2em;
+}
+
+@media (max-width: 1400px) {
+    .adminPanel {
+        padding-right: 4%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .adminPanel {
+        padding-right: 2%;
+    }
+}
+
+@media (max-width: 1080px) {
+
+    .adminPanel {
+        justify-content: space-around;
+        padding-right: 2em;
+    }
+    
+    .userPanel {
+        flex-direction: column;
+    }
+
+    .user-wrap {
+        padding-right: 2em;
+        justify-content: space-around;
+    }
+
+    .user-data {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .user .admin-title {
+        margin-top: 3em;
+    }
+
+    
+}
+
+
+
+@media (max-width: 700px) {
+    .adminPanel {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        padding-right: 0;
+    }
+    .adminPanel > * {
+        width: 333px;
+    }
+
+    .userPanel {
+        gap: 0em;
+    }
+
+    .user-wrap {
+        padding: 0;
+    }
+    .user-wrap>* {
+        flex: 100%;
+        margin-top: 1.5em;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .userPanel {
+        align-items: center;
+    }
+
+    .adminPanel,  .userPanel {
+        padding: 0 0.5em;
+    }
+    .adminPanel > *,  .userPanel > *{
+        width: 100%;
+    }
+    
+}

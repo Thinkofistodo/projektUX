@@ -1,0 +1,65 @@
+// 1060px - menu się musi wysunąć
+.mobile {
+    position: fixed;
+    bottom: 4%;
+    right: 4%;
+    display: none;
+    z-index: 20;
+    isolation: isolate;
+    i {
+        display: grid;
+        place-items: center;
+        width: 4rem;
+        aspect-ratio: 1 / 1;
+        font-size: 2.5rem;
+        color: $primaryColor;
+        background-color: #fff;
+        border-radius: $borderRadius;
+        box-shadow: 0 0 5px black;
+        z-index: 2;
+    }
+    &-list {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        z-index: -1;
+
+        &_link {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            padding: 1em;
+            background-color: #fff;
+            font-size: 1em;
+            border-radius: $borderRadius;
+            transition: transform 0.3s, opacity 0.3s;
+            z-index: -1;
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 0 5px black;
+            transform: translate(0,-50%) scale(1);
+            opacity: 0;
+            text-align: right;
+        }
+        &_link:hover {
+            color: $primaryColor;
+        }
+    }
+}
+
+
+@media (max-width: 1060px) {
+    .mobile {
+        display: block;
+    }
+}
+
+@media (max-height: 980px) {
+    .mobile {
+        bottom: 2%;
+    }
+}

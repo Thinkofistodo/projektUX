@@ -1,0 +1,145 @@
+.tasks-images {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2.5em; 
+    width: 100%;
+    padding: 0.5em 0.5em 0.5em 0;
+    transition: transform 5s;
+}
+
+.taskCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: flex-start;
+    width: 410px;
+    padding: 1.5rem 1.5rem;
+    padding-top: 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px black;
+    transition: transform 5s;
+    overflow: hidden;
+    
+    &-image {
+        width: 19.512%;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+    }
+
+    &-name, &-list, &-username, &-descriptionTitle {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    &-name {
+        font-size: 1.9em;
+        text-transform: uppercase;
+    }
+
+    &-list {
+        font-size: 1.3em;
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+        width: 100%;
+    }
+
+    &-username {
+        align-self: flex-end;
+        margin: 1em 0 0.5em 0;
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+
+   &-descriptionTitle {
+        align-self: flex-end;
+        margin: 1em 0 0.5em 0;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: bold;
+   }
+   
+    &-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        max-width: 35ch;
+        margin-bottom: 1em;
+        font-size: 1.1em;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    &-link {
+        text-decoration: none;
+    }
+}
+
+.taskCard::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3em;
+    background-color: $logoBlue;
+    background: linear-gradient(90deg, $primaryColor 0%, $transparentgreen 100%);
+}
+
+.taskCard.algorithm::after {
+    background: linear-gradient(90deg, $logoBlue 0%, $logoBlueTransparent 100%);
+}
+
+.sliderArrow {
+    padding: 0 0.7em;
+    font-size: 1.3em;
+    color: $logoBlue;
+    cursor: pointer;
+}
+
+.sliderArrow:hover {
+    color: $primaryColor;
+    user-select: none;
+}
+
+@media (max-width: 1000px){
+    .taskCard {
+        width: 360px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 500px){
+    .taskCard {
+        width: 340px;
+    }
+
+    .sliderArrow {
+        padding-right: 0;
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 375px){
+    .taskCard {font-size: 0.80rem;
+        width: 320px;
+    }
+    .fa-solid.sliderArrow {
+        display: none;
+    }
+}
+
+@media (max-width: 350px){
+.taskCard {
+    font-size: 0.80rem;
+    width: 295px;
+}
+}

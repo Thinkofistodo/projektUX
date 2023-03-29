@@ -1,0 +1,295 @@
+.posts {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.excercises {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+
+    &-excercise {
+        // background-color: $lightgreen;
+        position: relative;
+        padding: 2em 0;
+
+        &_name.h4 {
+            margin-bottom: 0.5em;
+        }
+
+        &_description {
+            // max-width: 70ch;
+            margin-bottom: 1em;
+            line-height: 1.5em;
+            font-size: 1.3em;
+        }
+
+        &_toggleComments {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+    }
+
+    &-excercise:last-of-type {
+        margin-bottom: 3em;
+    }
+
+
+
+
+    &-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        width: 100%;
+        padding: 1em 0;
+        gap: 1em;
+
+        &_wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_textarea {
+            width: 100%;
+            padding: 1.25em 0.5em;
+            margin-bottom: 0;
+            height: 3.7em;
+            position: relative;
+            border: 1px solid $primaryColor;
+            border-radius: $borderRadius;
+            font-size: 1.1em;
+            resize: none;
+            overflow: hidden;
+        }
+
+        &_textarea[disabled]{
+            background-color: #c7c7c7;
+        }
+
+        &_userImage {
+            align-self: flex-start;
+            height: 4rem;
+            margin-right: auto;
+            border-radius: $borderRadius;
+        }
+
+        &_submit {
+            margin-top: 1em;
+            margin-left: auto;
+        }
+        &_submit[disabled] {
+            background-color: $darkgreen;
+            cursor: not-allowed;
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_listSelect {
+            margin-top: 1em;
+            max-width: 20ch;
+            align-self: flex-start;
+            display: none;
+            padding: 0.5em;
+            border: 1px solid $green;
+            border-radius: $borderRadius;
+            font-size: 1.05em;
+        }
+
+        &_name.h2 {
+            margin-bottom: 0.5em;
+        }
+    }
+
+}
+
+.excercises-comments {
+    display: flex;
+    flex-direction: column;
+
+    &_comment {
+        margin: 1.5em 0;
+
+        width: 100%;
+        gap: 2em;
+
+        &--wrap {
+            // width: 100px;
+            margin-right: 1em;
+            display: flex;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+
+        &--userImage {
+            border-radius: $borderRadius;
+            width: 80px;
+            height: 80px;
+            aspect-ratio: 1/1;
+        }
+
+        &--date {
+            margin-left: auto;
+            font-family: "Roboto" !important;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        &--text {
+            // text-indent: 5em;
+            margin-bottom: 1em;
+            line-height: 1.5em;
+            font-size: 1.2em;
+            padding: 1;
+            width: auto;
+        }
+    }
+
+    &_comment:last-of-type {
+        margin-bottom: 3em;
+    }
+}
+
+
+.sidebar {
+    align-self: flex-start;
+
+    &-navigation {
+        &_list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            list-style: none;
+            gap: 1.5em;
+            margin-bottom: 1.5em;
+
+            &--link {
+                padding: 0.75em 0em 0.75em 0.5em;
+                color: $green;
+                text-decoration: none;
+            }
+
+            &--link:hover {
+                color: black;
+                text-decoration: underline;
+                text-decoration-color: black;
+                text-decoration-thickness: 0.08em;
+                text-underline-offset: 0.5em;
+            }
+        }
+
+        &_title {
+            text-align: right;
+        }
+
+    }
+
+}
+
+
+@media (max-width: 1370px) {
+    .sidebar {
+        display: none;
+    }
+
+    .excercises-wrap_listSelect {
+        display: block;
+    }
+}
+
+@media (max-width: 1080px) {
+    .excercises-excercise_description {
+        // max-width: 70ch;
+        margin-bottom: 1em;
+        line-height: 1.5em;
+        font-size: 1.15em;
+    }
+
+    .excercises-comments {
+        &_comment {
+
+            &--text {
+                font-size: 1.1em;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 700px) {
+    .excercises-excercise_description {
+        font-size: 1em;
+    }
+
+    .excercises-excercise_code .language-c {
+        font-size: 0.95em;
+    }
+
+    .excercises-wrap_listSelect {
+        font-size: 1em;
+        max-width: 15ch;
+        margin-top: 0;
+    }
+
+    .excercises-comments {
+        &_comment {
+            &--userImage {
+                width: 70px;
+                height: 70px;
+            }
+
+            &--text {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .excercises-form_textarea {
+        padding-top: 0.7em;
+    }
+}
+
+
+@media (max-width: 415px) {
+    .posts {
+        padding: 1svh 0.5em;
+    }
+
+    .excercises-excercise_description {
+        font-size: 0.8em;
+    }
+
+    .excercises-excercise_code .language-c {
+        font-size: 0.90em;
+    }
+
+    .excercises-wrap_listSelect {
+        max-width: 15ch;
+        font-size: 0.70em;
+    }
+
+    .excercises-comments {
+        &_comment {
+            &--userImage {
+                width: 70px;
+            }
+
+            &--text {
+                font-size: 0.95em;
+            }
+        }
+    }
+}

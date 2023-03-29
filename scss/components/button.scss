@@ -1,0 +1,59 @@
+@mixin buttonColor($primaryColor, $secondaryColor, $borderColor: transparent) {
+    border: 1px solid $borderColor;
+    color: $secondaryColor;
+    background-color: $primaryColor;
+}
+
+@mixin button {
+    font-family: sans-serif;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    border-radius: $borderRadius;
+    transition: backgroundColor 0.3s;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+@mixin buttonHover($backgroundColor, $fontColor: white){
+    &:hover {
+        color: $fontColor;
+        background-color: $backgroundColor;
+    }
+}
+
+@mixin buttonSize($padding, $fontSize) {
+    padding: $padding;
+    font-size: $fontSize;
+}
+
+.btn1 {
+    @include buttonColor(white, $primaryColor, $primaryColor);
+    @include buttonHover($primaryColor);
+}
+
+.btn2 {
+    @include buttonColor($primaryColor, white);
+    @include buttonHover($primaryDark);
+}
+
+.btn3 {
+    @include buttonColor($logoBlue, white);
+    @include buttonHover($logoBlueHover);
+}
+
+.btn4 {
+    @include buttonColor($red, white);
+    @include buttonHover($redHover);
+}
+
+.btnL {
+    @include button;
+    @include buttonSize($buttonLargePadding, $buttonLargeFontSize);
+}
+
+.btnM {
+    @include button;
+    @include buttonSize($buttonMediumPadding, $buttonMediumFontSize);
+}
+

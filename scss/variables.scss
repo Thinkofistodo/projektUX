@@ -1,0 +1,46 @@
+
+// BUTTON
+$buttonLargeFontSize: 1.1em;
+$buttonLargePadding: 0.5em 1em;
+$buttonLargeLetterSpacing: 0.02em;
+
+$buttonMediumFontSize: 1em;
+$buttonMediumPadding: 0em 0.8em;
+$buttonMediumLetterSpacing: 0.02em;
+
+// NAVIGATION
+$navigationFontSize: $buttonLargeFontSize;
+$navigationPadding: 1em;
+$navigationElementPadding: $buttonLargePadding;
+$navigationLetterSpacing: $buttonLargeLetterSpacing;
+
+// INPUT
+
+// BORDER
+$borderRadius: 5px;
+
+// COLORS
+$black: #1c1d1e;
+$blackish: #212121;
+$blue: #208acc;
+$reddish: #ff4545;
+$darkred: #df1212;
+$logoBlue: #0d1d41;
+$logoBlueHover: #1d346a;
+$logoBlueTransparent: #1d346aa0;
+
+$lightgreen: #a7d76f;
+$green: #3d6d07;
+$darkgreen: #264502;
+$transparentgreen: #3d6d073f;
+
+$primaryTransparent: $transparentgreen;
+$primaryDark: $darkgreen;
+$primaryColor: $green;
+
+$red: #980b0b;
+$redHover: #4f0909;
+
+
+// SCREEN SIZE
+$breakpoint2: 1110px;

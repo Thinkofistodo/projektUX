@@ -1,0 +1,97 @@
+.navigation {
+    &-list {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 0.75em 2em 0 2em;
+        list-style: none;
+
+        &_link {
+            display: block;
+            padding: $navigationPadding;
+            color: #1d1d1d;
+            font-size: $navigationFontSize;
+            text-transform: uppercase;
+            text-decoration: none;
+               font-family: 'Raleway', sans-serif;
+        }
+    }
+ 
+}
+
+.username {
+    letter-spacing: 0.05em;
+}
+
+.logo {
+    display: none;
+
+    .logoLink {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .logoImage {
+        max-height: 4rem;
+        transform: translateY(-0.05em);
+    }
+
+    .logoLink:hover {
+        color: $primaryColor;
+    }
+}
+
+@media (max-width: 1060px) {
+    .navigation-list li:not(:is(li:nth-last-of-type(1), li:nth-last-of-type(2), .logo)) {
+        display: none;
+    }
+
+    .logo {
+        display: block;
+    }
+}
+
+@media (max-width: 650px) {
+    .logoText {
+        display: none;
+    }
+}
+
+@media (max-width: 530px) {
+    .navigation-list {
+        gap: 0;
+        justify-content: space-between;
+
+        li.mla {
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .navigation-list {
+        font-size: 0.9em;
+        padding: 0.5em 1em;
+    }
+}
+
+@media (max-width: 400px) {
+    .navigation-list {
+        font-size: 0.85em;
+        padding: 0.3em 1em;
+
+        .btnL {
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+        }
+    }
+}
+
+@media (max-width: 365px) {
+    .navigation-list {
+        font-size: 0.72em;
+    }
+}
